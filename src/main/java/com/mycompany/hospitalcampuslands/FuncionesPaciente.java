@@ -5,6 +5,7 @@
 package com.mycompany.hospitalcampuslands;
 
 import java.util.Scanner;
+
 /**
  *
  * @author STIVEN MARTINEZ VILLAMIZAR
@@ -13,10 +14,9 @@ public class FuncionesPaciente {
 
     private static int edad;
 
-    static Paciente registro_paciente(String nombre, String descripcion, int id, String telefono, String telefono1) {
-        return new Paciente(nombre, edad, descripcion, id, telefono, "Activo");
+    static Paciente registro_paciente(String nombre, int edad, String descripcion, String id, String telefono) {
+        return new Paciente(nombre, edad, descripcion, id, telefono, "registrado");
     }
-
 
     public static void menu(Paciente p1, Paciente p2, Paciente p3, Paciente p4) {
 
@@ -35,7 +35,7 @@ public class FuncionesPaciente {
             """);
 
             op = sc.nextInt();
-            sc.nextLine(); 
+            sc.nextLine();
 
             while (op < 1 || op > 4) {
                 System.out.println("Opción inválida");
@@ -62,39 +62,75 @@ public class FuncionesPaciente {
                     System.out.println("Ingrese los teléfonos:");
                     String telefono = sc.nextLine();
 
+                    String estado = "registrado";
+
                     if (p1 == null) {
-                        p1 = registro_paciente(nombre, id, edad, descripcion, telefono);
+                        p1 = registro_paciente(nombre, edad, descripcion, id, telefono);
                     } else if (p2 == null) {
-                        p2 = registro_paciente(nombre, id, edad, descripcion, telefono);
+                        p2 = registro_paciente(nombre, edad, descripcion, id, telefono);
                     } else if (p3 == null) {
-                        p3 = registro_paciente(nombre, id, edad, descripcion, telefono);
+                        p3 = registro_paciente(nombre, edad, descripcion, id, telefono);
                     } else if (p4 == null) {
-                        p4 = registro_paciente(nombre, id, edad, descripcion, telefono);
+                        p4 = registro_paciente(nombre, edad, descripcion, id, telefono);
                     } else {
                         System.out.println("El cupo máximo de pacientes se ha alcanzado.");
                     }
                 }
 
                 case 2 -> {
-                    
-                      System.out.println("HISTORIAL PACIENTES");
-                      System.out.println(". "+p1.getNombre());
-                      System.out.println(". "+p2.getId());
-                      System.out.println(". "+p1.getEdad());
-                      System.out.println("."+p1.getDescripcion());
-                      System.out.println("."+p1.getTelefono());
-                      System.out.println("."+p2.getTelefono());
-                    
-                    break;
+
+                    System.out.println("""
+                                       ***********************
+                                         HISTORIAL PACIENTES
+                                       ***********************
+                                       """);
+                    boolean historial = false;
+
+                    if (p1 != null) {
+                        System.out.println("\n[Paciente 1]");
+                        p1.historialsito();
+                        historial = true;
+                    } else {
+                        System.out.println("\n [Paciente 1] vacio");
+                    }
+
+                    if (p2 != null) {
+                        System.out.println("\n[Paciente 2]");
+                        p2.historialsito();
+                        historial = true;
+                    } else {
+                        System.out.println("\n [Paciente 2] vacio");
+                    }
+
+                    if (p3 != null) {
+                        System.out.println("\n[Paciente 3]");
+                        p3.historialsito();
+                        historial = true;
+                    } else {
+                        System.out.println("\n [Paciente 3] vacio");
+                    }
+
+                    if (p4 != null) {
+                        System.out.println("\n[Paciente 4]");
+                        p4.historialsito();
+                        historial = true;
+                    } else {
+                        System.out.println("\n [Paciente 4] vacio");
+                    }
+
+                    if (!historial) {
+                        System.out.println("No hay pacientes registradoss");
+                    }
+
                 }
 
                 case 3 -> {
-                    System.out.println("Atender paciente (pendiente)");
+                    
                 }
             }
-
         } while (op != 4);
+        System.out.println("Adioooos");
 
-        System.out.println("Programa finalizado.");
     }
+
 }

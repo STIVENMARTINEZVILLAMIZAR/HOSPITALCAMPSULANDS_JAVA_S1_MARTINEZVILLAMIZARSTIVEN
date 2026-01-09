@@ -5,21 +5,17 @@
 package com.mycompany.hospitalcampuslands;
 
 
-/**
- *
- * @author STIVEN MARTINEZ VILLAMIZAR
- */
 public class Paciente {
 
     String nombre;
-    int id;
+    String id;
     int edad;
     String descripcion;
     String telefono;
     String tipoPaciente;
     String estado;
 
- public Paciente(String nombre, int edad, String descripcion, int id1, String telefono, String estado) {
+ public Paciente(String nombre, int edad, String descripcion, String id, String telefono, String estado) {
     this.nombre = nombre;
     this.edad = edad;
     this.id = id;
@@ -43,7 +39,7 @@ public String tipoPaciente() {
         return nombre;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -67,8 +63,18 @@ public String tipoPaciente() {
         return estado;
     }
 
-    boolean getnombre() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    public void setEstado(String estado) {
+    this.estado = estado;
+}
+public void historialsito() {
+    System.out.println("Nombre: " + nombre);
+    System.out.println("Documento: " + id);
+    System.out.println("Edad: " + edad);
+    System.out.println("Tipo: " + tipoPaciente);
+    System.out.println("Estado: " + estado);
+    System.out.println("Motivo: " + descripcion);
+    System.out.println("Telefonos: " + telefono);
+}
+
 
 }
