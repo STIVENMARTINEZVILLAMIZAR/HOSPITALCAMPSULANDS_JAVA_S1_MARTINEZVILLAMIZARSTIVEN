@@ -4,6 +4,7 @@
  */
 package com.mycompany.hospitalcampuslands;
 
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -125,8 +126,36 @@ public class FuncionesPaciente {
                 }
 
                 case 3 -> {
-                    
+
+                    if (p1 != null && p1.getEstado().equals("registrado")) {
+                        System.out.println("El paciente " + p1.getNombre() + " está listo para ser atendido");
+                        p1.setEstado("atendido");
+                    } else {
+                        System.out.println("El paciente 1 no está disponible");
+                    }
+
+                    if (p2 != null && p2.getEstado().equals("registrado")) {
+                        System.out.println("El paciente " + p2.getNombre() + " está listo para ser atendido");
+                        p2.setEstado("atendido");
+                    } else {
+                        System.out.println("El paciente 2 no está disponible");
+                    }
+
+                    if (p3 != null && p3.getEstado().equals("registrado")) {
+                        System.out.println("El paciente " + p3.getNombre() + " está listo para ser atendido");
+                        p3.setEstado("atendido");
+                    } else {
+                        System.out.println("El paciente 3 no está disponible");
+                    }
+
+                    if (p4 != null && p4.getEstado().equals("registrado")) {
+                        System.out.println("El paciente " + p4.getNombre() + " está listo para ser atendido");
+                        p4.setEstado("atendido");
+                    } else {
+                        System.out.println("El paciente 4 no está disponible");
+                    }
                 }
+
             }
         } while (op != 4);
         System.out.println("Adioooos");
