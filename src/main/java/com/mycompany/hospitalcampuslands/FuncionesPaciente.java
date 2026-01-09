@@ -77,8 +77,15 @@ public class FuncionesPaciente {
 
                 case 2 -> {
                     
-                    System.out.println("Mostrar pacientes (pendiente)");
+                      System.out.println("HISTORIAL PACIENTES");
+                      System.out.println(". "+p1.getNombre());
+                      System.out.println(". "+p2.getId());
+                      System.out.println(". "+p1.getEdad());
+                      System.out.println("."+p1.getDescripcion());
+                      System.out.println("."+p1.getTelefono());
+                      System.out.println("."+p2.getTelefono());
                     
+                    break;
                 }
 
                 case 3 -> {
