@@ -1,16 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.hospitalcampuslands;
 
-/**
- *
- * @author camper
- */
 public class main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        // Pacientes iniciales en null
+        Paciente p1 = null;
+        Paciente p2 = null;
+        Paciente p3 = null;
+        Paciente p4 = null;
+
+        // Llamar al menú
+        FuncionesPaciente.menu(p1, p2, p3, p4);
     }
 }

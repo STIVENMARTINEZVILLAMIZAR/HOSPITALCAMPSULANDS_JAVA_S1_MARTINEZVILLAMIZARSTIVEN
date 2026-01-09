@@ -11,10 +11,12 @@ import java.util.Scanner;
  */
 public class FuncionesPaciente {
 
-   
-    static Paciente registro_paciente(String nombre, String id, int edad, String descripcion, String telefono) {
-        return new Paciente(nombre, id, edad, descripcion, telefono);
+    private static int edad;
+
+    static Paciente registro_paciente(String nombre, String descripcion, int id, String telefono, String telefono1) {
+        return new Paciente(nombre, edad, descripcion, id, telefono, "Activo");
     }
+
 
     public static void menu(Paciente p1, Paciente p2, Paciente p3, Paciente p4) {
 

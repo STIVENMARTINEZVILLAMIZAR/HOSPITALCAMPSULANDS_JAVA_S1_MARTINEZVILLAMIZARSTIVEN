@@ -19,26 +19,25 @@ public class Paciente {
     String tipoPaciente;
     String estado;
 
-    public Paciente(String nombre, String descripcion, int id, String telefono, String estado) {
-        this.nombre = nombre;
-        this.id = id;
-        this.edad = edad;
-        this.descripcion = descripcion;
-        this.telefono = telefono;
-        this.estado = estado;
-    }
+ public Paciente(String nombre, int edad, String descripcion, int id1, String telefono, String estado) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.id = id;
+    this.descripcion = descripcion;
+    this.telefono = telefono;
+    this.estado = estado;
+}
 
-   public double tipoPaciente() {
 
-        if (edad >= 18) {
-            
-        } 
-        else {
-            System.out.println("el paciente es menor" + edad);
-        }
-        return 0;
-        
+public String tipoPaciente() {
+    if (edad >= 18) {
+        tipoPaciente = "Adulto";
+    } else {
+        tipoPaciente = "Menor";
     }
+    return tipoPaciente;
+}
+
 
     public String getNombre() {
         return nombre;
@@ -69,5 +68,3 @@ public class Paciente {
     }
 
 }
-
-//p1.jet estado
